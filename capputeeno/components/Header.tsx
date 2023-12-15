@@ -1,7 +1,6 @@
 "use client"
 
-import { saira, saira_stencil_one } from "@/app/layout";
-import React from "react"
+import { saira_stencil_one } from "@/app/layout";
 import { styled } from "styled-components"
 import { SearchInput } from "./SearchInput";
 import CartControl from "./CartControl";
@@ -10,6 +9,7 @@ const HeaderWrapper = styled.header`
     font-family: var(--font-saira);
     width: 100vw;
     height: 80px;
+    margin-bottom: 34px;
     background-color: white;
     color: black;
     display: flex;

@@ -1,6 +1,5 @@
 import useLocalStorage from "@/hooks/useLocalStorage"
-import React from "react"
-import CartIcon from "./CartIcon"
+import CartIcon from "./icons/CartIcon"
 import styled from "styled-components"
 
 const CartCountWrapper = styled.div`
@@ -19,7 +18,6 @@ const CartCount = styled.span`
 `;
 
 const CartControl = () => {
-
     const {value} = useLocalStorage("cart-items")
 
     return (

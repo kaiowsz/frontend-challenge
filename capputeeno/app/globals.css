@@ -4,16 +4,17 @@
   --dark-color-input: #41414D;
   --dark-color-apoio: #737380;
   --delete-color: #DE3838;
+  --main-orange: #FFA585;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  max-width: 100vw;
-  overflow-x: hidden;
 }
 
-body {
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
   background: #F0F0F5;
 }

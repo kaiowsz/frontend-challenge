@@ -1,10 +1,12 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import FilterBar from '@/components/filters/FilterBar'
+import { FilterContextProvider } from '@/contexts/FilterContext'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      Hello!
-    </main>
+    <FilterContextProvider>
+      <main>
+        <FilterBar />
+      </main>
+    </FilterContextProvider>
   )
 }
