@@ -11,7 +11,7 @@ const FilterWrapper = styled.div`
     border: none;
     display: flex;
     align-items: center;
-     kfont-family: inherit;
+    font-family: inherit;
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
