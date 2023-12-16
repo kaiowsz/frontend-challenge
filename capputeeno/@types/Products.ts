@@ -4,7 +4,7 @@ export type Product = {
     image_url: string;
     category: string;
     id: string;
-    price_in_cents: number | string;
+    price_in_cents: number;
     sales: number | string;
     created_at: Date;
 }

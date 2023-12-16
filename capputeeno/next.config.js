@@ -2,6 +2,16 @@
 const nextConfig = {
     compiler: {
         styledComponents: true
+    },
+    images: {
+        remotePatterns: [
+            {
+                port: "",
+                protocol: "https",
+                hostname: "storage.googleapis.com",
+                pathname: "/**"
+            }
+        ]
     }
 }
 
