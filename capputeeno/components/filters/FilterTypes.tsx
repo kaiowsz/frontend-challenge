@@ -4,7 +4,7 @@ import { FilterContext } from "@/contexts/FilterContext";
 import { useFilter } from "@/hooks/useFilter";
 import { useContext } from "react";
 import styled from "styled-components"
-import { FilterType } from "@/@types/FilterTypes";
+import { FilterType } from "@/@types/FilterType";
 
 interface FilterItemProps {
     selected: boolean;
@@ -14,7 +14,6 @@ const FilterList = styled.ul`
   display: flex;
   align-items: center;
   gap: 40px;
-  padding: 20px 160px;
 `;
 
 const FilterItem = styled.li<FilterItemProps>`
