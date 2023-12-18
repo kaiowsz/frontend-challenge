@@ -1,13 +1,12 @@
-import type { Metadata } from 'next'
-import { Inter, Saira_Stencil_One, Saira,  } from 'next/font/google'
-import './globals.css'
-import Header from '@/components/Header'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { FilterContextProvider } from '@/contexts/FilterContext'
+import type { Metadata } from "next"
+import { Saira_Stencil_One, Saira,  } from "next/font/google"
+import "./globals.css"
+import Header from "@/components/Header"
+import Providers from "@/utils/Providers"
 
 export const saira = Saira({ 
   weight: ["300", "400", "500", "600", "700"],
-  subsets: ['latin'] 
+  subsets: ["latin"] 
 })
 
 export const saira_stencil_one = Saira_Stencil_One({
@@ -16,8 +15,8 @@ export const saira_stencil_one = Saira_Stencil_One({
 })
 
 const metadata: Metadata = {
-  title: 'Capputeeno',
-  description: 'A web ecommerce application',
+  title: "Capputeeno",
+  description: "A web ecommerce application",
 }
 
 export default function RootLayout({
@@ -28,7 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={saira.className}>
-        {children}
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   )
