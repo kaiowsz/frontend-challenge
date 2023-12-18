@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { SearchIcon } from "./icons/SearchIcon";
 import { InputHTMLAttributes } from "react";
+import { useFilter } from "@/hooks/useFilter";
 
 const SearchWrapper = styled.div`
     position: relative;
@@ -33,9 +34,10 @@ interface SearchInputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const SearchInput = (props: SearchInputProps) => {
+    const {setSearch, search} = useFilter();
     return (
         <SearchWrapper>
-            <SearchInputStyle {...props} />
+            <SearchInputStyle {...props} onChange={(event) => setSearch(event.target.value)} value={search} />
             <SearchIcon />
         </SearchWrapper>
     )

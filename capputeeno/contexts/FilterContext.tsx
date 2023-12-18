@@ -8,14 +8,18 @@ export const FilterContext = createContext({
     page: 0,
     search: "",
     type: FilterType.ALL,
-    priority: FilterPriority.NEW,
+    priority: FilterPriority.POPULAR,
     setPage: (value: number) => {},
     setSearch: (value: string) => {},
     setType: (value: FilterType) => {},
     setPriority: (value: FilterPriority) => {},
 })
 
-export function FilterContextProvider({children}: { children: ReactNode }) {
+interface ProviderProps {
+    children: ReactNode
+}
+
+export function FilterContextProvider({children}: ProviderProps) {
     const [search, setSearch] = useState("")
     const [page, setPage] = useState(0)
     const [type, setType] = useState(FilterType.ALL)

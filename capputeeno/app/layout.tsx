@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter, Saira_Stencil_One, Saira,  } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/Header'
-import { QueryClientProvider } from '@tanstack/react-query'
+import Header from '@/components/Header'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { FilterContextProvider } from '@/contexts/FilterContext'
 
 export const saira = Saira({ 
   weight: ["300", "400", "500", "600", "700"],
@@ -27,7 +28,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={saira.className}>
-        <Navbar />
         {children}
       </body>
     </html>

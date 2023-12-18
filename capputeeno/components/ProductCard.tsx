@@ -45,14 +45,22 @@ const Card = styled.div`
 `;
 
 const ProductCard = ({image, price, title}: ProductCardProps) => {
-  return (
+
+    function formatPrice(price: number) {
+        return (price / 100).toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        })
+    }
+
+    return (
     <Card>
         <Image src={image} alt={title} width={256} height={300} />
         <h3>{title}</h3>
         <div />
-        <p>R$ {(price / 100).toString().replace(".", ",")}</p>
+        <p>{formatPrice(price)}</p>
     </Card>
-  )
+    )
 }
 
 export default ProductCard

@@ -4,6 +4,7 @@ import { saira_stencil_one } from "@/app/layout";
 import { styled } from "styled-components"
 import { SearchInput } from "./SearchInput";
 import CartControl from "./CartControl";
+import { useFilter } from "@/hooks/useFilter";
 
 const HeaderWrapper = styled.header`
     font-family: var(--font-saira);
