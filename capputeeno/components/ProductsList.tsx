@@ -9,7 +9,8 @@ const ListContainer = styled.div`
   grid-template-columns: repeat(auto-fill, 256px);
   grid-gap: 24px 32px;
   max-width: 100%;
-  margin-top: 32px;
+  margin: 32px auto 0px;
+  padding: 0 10px;
 
 `
 

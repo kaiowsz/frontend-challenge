@@ -9,6 +9,10 @@ const FilterWrapper = styled.div`
   width: 100%;
   align-items: start;
   padding: 20px 160px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 20px;
+  }
 `;
 
 const FilterBar = () => {

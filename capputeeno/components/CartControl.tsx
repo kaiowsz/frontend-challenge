@@ -18,12 +18,12 @@ const CartCount = styled.span`
 `;
 
 const CartControl = () => {
-    const {value} = useLocalStorage("cart-items")
+    const {value} = useLocalStorage("cart-items", []);
 
     return (
         <CartCountWrapper>
             <CartIcon />
-            {value.length && <CartCount>{value.length}</CartCount> }
+            {value.length > 0 && <CartCount>{value.length}</CartCount> }
         </CartCountWrapper>
     )
 }

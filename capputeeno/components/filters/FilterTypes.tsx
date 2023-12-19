@@ -14,6 +14,10 @@ const FilterList = styled.ul`
   display: flex;
   align-items: center;
   gap: 40px;
+
+  @media (max-width: 740px) {
+    gap: 25px;
+  }
 `;
 
 const FilterItem = styled.li<FilterItemProps>`
@@ -29,6 +33,11 @@ const FilterItem = styled.li<FilterItemProps>`
   font-size: 16px;
   color: var(--dark-color-apoio);
   cursor: pointer;
+
+  @media (max-width: 740px) {
+    line-height: 18px;
+    font-size: 14px;
+  }
 
 `;
 

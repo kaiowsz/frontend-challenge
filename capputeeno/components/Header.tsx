@@ -18,8 +18,8 @@ const HeaderWrapper = styled.header`
     align-items: center;
     padding: 20px 160px;
 
-    @media screen and (max-width: 900px) {
-      padding: 20px 40px;
+    @media screen and (max-width: 1024px) {
+      padding: 20px;
     }
 
     @media screen and (max-width: 400px) {
@@ -30,6 +30,11 @@ const HeaderWrapper = styled.header`
 const HeaderTitle = styled.h1`
   font-weight: 400;
   color: var(--title-color);
+  font-size: 40px;
+
+  @media (max-width: 740px) {
+    font-size: 24px;
+  }
 `
 
 const HeaderContent = styled.div`

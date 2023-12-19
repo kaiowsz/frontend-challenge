@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
+import formatPrice from "@/utils/formatPrice";
 
 interface ProductCardProps {
     image: string;
@@ -45,14 +46,6 @@ const Card = styled.div`
 `;
 
 const ProductCard = ({image, price, title}: ProductCardProps) => {
-
-    function formatPrice(price: number) {
-        return (price / 100).toLocaleString("pt-BR", {
-            style: "currency",
-            currency: "BRL"
-        })
-    }
-
     return (
     <Card>
         <Image src={image} alt={title} width={256} height={300} />

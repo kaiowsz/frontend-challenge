@@ -32,6 +32,7 @@ const PriorityFilter = styled.ul`
   padding: 12px 16px;
   width: 200px;
   z-index: 10;
+  right: 8px;
 
   li {
     color: var(--dark-color-apoio);

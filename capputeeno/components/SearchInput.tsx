@@ -13,10 +13,14 @@ const SearchWrapper = styled.div`
         top: 50%;
         transform: translateY(-50%);
     }
+
+    @media (max-width: 740px) {
+        width: 250px;
+    }
 `
 
 const SearchInputStyle = styled.input`
-    width: 352px;
+    width: 100%;
     border-radius: 8px;
     padding: 10px 16px;
     line-height: 22px;
@@ -27,6 +31,12 @@ const SearchInputStyle = styled.input`
     background: var(--input-bg);
     color: var(--dark-color-apoio); 
     border: none;
+
+    @media (max-width: 740px) {
+        line-height: 18px;
+        font-size: 12px;
+    }
+
 `;
 
 interface SearchInputProps extends InputHTMLAttributes<HTMLInputElement> {
