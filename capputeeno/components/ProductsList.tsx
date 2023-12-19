@@ -21,7 +21,7 @@ const ProductsList = () => {
   return (
     <ListContainer>
       {data?.map(product => (
-        <ProductCard image={product.image_url} price={product.price_in_cents} title={product.name} key={product.id} />
+        <ProductCard image={product.image_url} price={product.price_in_cents} title={product.name} key={product.id} id={product.id} />
       ))}
     </ListContainer>
   )

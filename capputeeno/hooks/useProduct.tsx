@@ -24,7 +24,8 @@ export function useProduct(id: string) {
     const {data} = useQuery({
         queryFn: () => fetchProductsFunction(id),
         queryKey: ["product", id],
-        enabled: !!id
+        enabled: !!id,
+        staleTime: 1000 * 60 * 5
     })
 
     return {

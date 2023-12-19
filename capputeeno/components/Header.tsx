@@ -5,6 +5,7 @@ import { styled } from "styled-components"
 import { SearchInput } from "./SearchInput";
 import CartControl from "./CartControl";
 import { useFilter } from "@/hooks/useFilter";
+import { useRouter } from "next/navigation";
 
 const HeaderWrapper = styled.header`
     font-family: var(--font-saira);
@@ -31,6 +32,7 @@ const HeaderTitle = styled.h1`
   font-weight: 400;
   color: var(--title-color);
   font-size: 40px;
+  cursor: pointer;
 
   @media (max-width: 740px) {
     font-size: 24px;
@@ -50,9 +52,15 @@ const HeaderContent = styled.div`
 `
 
 const Header = () => {
+
+  const router = useRouter();
+  function handleNavigate() {
+    router.push("/")
+  }
+
   return (
     <HeaderWrapper>
-        <HeaderTitle className={saira_stencil_one.className}>Capputeeno</HeaderTitle>
+        <HeaderTitle onClick={handleNavigate} className={saira_stencil_one.className}>Capputeeno</HeaderTitle>
         <HeaderContent>
           <SearchInput placeholder="Procurando por algo específico?" />
           <CartControl />

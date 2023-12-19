@@ -123,6 +123,30 @@ const ShoppingButton = styled.button`
 const Product = ({searchParams}: {searchParams: {id: string}}) => {
   const { data } = useProduct(searchParams.id)
 
+  function handleAddToCart() {
+   let cartItems = localStorage.getItem("cart-items");
+
+   if(cartItems) {
+    let cartItemsArray = JSON.parse(cartItems);
+
+    let productExistsIndex = cartItemsArray.findIndex((item: {id: string}) => item.id === searchParams.id);
+
+    if(productExistsIndex == -1) {
+      cartItemsArray.push({...data, id: searchParams.id, quantity: 1})
+    } else {
+      cartItemsArray[productExistsIndex].quantity += 1;
+    }
+
+    localStorage.setItem("cart-items", JSON.stringify(cartItemsArray))
+   } else {
+    localStorage.setItem("cart-items", JSON.stringify([
+      {...data, id: searchParams.id, quantity: 1}
+    ]));
+   }
+
+    const newValue = "";
+  }
+
   return (
     <ProductWrapper>
       <ReturnButton navigate="/" />
@@ -139,8 +163,8 @@ const Product = ({searchParams}: {searchParams: {id: string}}) => {
               <p>{data?.description}</p>
             </div>
           </ProductDetailsWrapper>
-          <ShoppingButton>
-            <ShoppingIcon /> Adicionar ao carrinho
+          <ShoppingButton onClick={handleAddToCart}>
+            <ShoppingIcon/> Adicionar ao carrinho
           </ShoppingButton>
         </div>
       </section>
