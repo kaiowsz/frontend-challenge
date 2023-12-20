@@ -77,7 +77,11 @@ const CartResult = styled.div`
     }
 `;
 
-const TotalItem = styled.div`
+interface TotalItemProps {
+    isBold: boolean;
+}
+
+const TotalItem = styled.div<TotalItemProps>`
     display: flex;
     width: 100%;
     align-items: center;
